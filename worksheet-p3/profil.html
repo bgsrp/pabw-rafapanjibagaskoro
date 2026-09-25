@@ -34,7 +34,7 @@
           <tr>
             <th scope="col">Nama Acara</th>
             <th scope="col">Tanggal Tampil</th>
-            <th scope="col">Peran / Instrumen</th>
+            <th scope="col">Role</th>
             <th scope="col">Jumlah Lagu</th>
           </tr>
         </thead>
@@ -42,20 +42,20 @@
           <tr>
             <th scope="row">Pesona Ta'aruf UII 2026</th>
             <td>5 September 2026</td>
-            <td>Vokal & Gitar Akustik</td>
-            <td>3 Lagu</td>
+            <td>Lead Vocal</td>
+            <td>3</td>
           </tr>
           <tr>
-            <th scope="row">Jamming Session UKM Musik (Rockstar Studio)</th>
-            <td>18 Juli 2026</td>
-            <td>Gitar Akustik & Vokal</td>
-            <td>4 Lagu</td>
+            <th scope="row">Kuliah Perdana UII 2026</th>
+            <td>2 September 2026</td>
+            <td>Personal Assistant Vocalist</td>
+            <td>12</td>
           </tr>
           <tr>
-            <th scope="row">Pentas Akustik Mahasiswa UII</th>
-            <td>20 November 2025</td>
-            <td>Vokal, Gitar Akustik & Keyboard</td>
-            <td>3 Lagu</td>
+            <th scope="row">Senja di Stasiun Jogja</th>
+            <td>8 Agustus 2026</td>
+            <td>Male Vocal</td>
+            <td>12</td>
           </tr>
         </tbody>
       </table>
@@ -63,7 +63,22 @@
 
     <section id="catat-penampilan">
       <h2>Tambah Catatan Penampilan Baru</h2>
-      <!-- form Anda nanti di sini (Lembar E) -->
+
+      <form action="/simpan" method="post">
+        <p>
+          <label for="nama-acara">Nama Acara</label>
+          <input type="text" id="nama-acara" name="nama-acara" required>
+        </p>
+        <p>
+          <label for="tanggal-tampil">Tanggal Tampil</label>
+          <input type="date" id="tanggal-tampil" name="tanggal-tampil" required>
+        </p>
+        <p>
+          <label for="jumlah">Jumlah Lagu</label>
+          <input type="number" id="jumlah-lagu" name="jumlah-lagu" required>
+        </p>
+        <button type="submit">Simpan</button>
+      </form>
     </section>
   </main>
 
