@@ -12,14 +12,16 @@
 </head>
 <body>
   <header>
-    <h1>Perjalanan Bermusik Saya di UII</h1>
-    <nav aria-label="Navigasi utama">
-      <ul>
-        <li><a href="#riwayat-panggung">Riwayat Panggung</a></li>
-        <li><a href="#catat-penampilan">Catat Penampilan</a></li>
-        <li><a href="#tentang-saya">Tentang Saya</a></li>
-      </ul>
-    </nav>
+    <div class="header-baris">
+      <h1>Perjalanan Bermusik Saya di UII</h1>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#riwayat-panggung">Riwayat Panggung</a></li>
+          <li><a href="#catat-penampilan">Catat Penampilan</a></li>
+          <li><a href="#tentang-saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -32,6 +34,24 @@
              width="640" height="360" loading="lazy">
         <figcaption>Perform Unisi Music Community di Pesona Ta'aruf UII 2026</figcaption>
       </figure>
+
+      <div class="katalog">
+        <article class="kartu">
+          <h3>Pesona Ta'aruf UII 2026</h3>
+          <p>Tanggal: 5 September 2026</p>
+          <p>Role: Lead Vocal (3 Lagu)</p>
+        </article>
+        <article class="kartu">
+          <h3>Kuliah Perdana UII 2026</h3>
+          <p>Tanggal: 2 September 2026</p>
+          <p>Role: Personal Assistant Vocalist (12 Lagu)</p>
+        </article>
+        <article class="kartu">
+          <h3>Senja di Stasiun Jogja</h3>
+          <p>Tanggal: 8 Agustus 2026</p>
+          <p>Role: Male Vocal (12 Lagu)</p>
+        </article>
+      </div>
 
       <table>
         <caption>Daftar Penampilan dan Kegiatan Musik Saya Selama Kuliah di UII</caption>
@@ -70,18 +90,18 @@
       <h2>Tambah Catatan Penampilan Baru</h2>
 
       <form action="/simpan" method="post">
-        <p>
+        <div class="form-kolom">
           <label for="nama-acara">Nama Acara</label>
           <input type="text" id="nama-acara" name="nama-acara" required>
-        </p>
-        <p>
+        </div>
+        <div class="form-kolom">
           <label for="tanggal-tampil">Tanggal Tampil</label>
           <input type="date" id="tanggal-tampil" name="tanggal-tampil" required>
-        </p>
-        <p>
+        </div>
+        <div class="form-kolom">
           <label for="jumlah-lagu">Jumlah Lagu</label>
           <input type="number" id="jumlah-lagu" name="jumlah-lagu" min="1" max="20" required>
-        </p>
+        </div>
         <button type="submit">Simpan</button>
       </form>
     </section>

@@ -1,0 +1,43 @@
+figure {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-1);
+  max-width: 42rem;
+}
+
+figure img {
+  border-radius: var(--radius-md);
+}
+
+figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--color-fg);
+}
+
+th, td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+thead th {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
