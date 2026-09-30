@@ -42,14 +42,12 @@ thead th {
   color: var(--color-surface);
 }
 
-/* Lembar C.1 - Galeri adaptif (Grid) */
 .galeri {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-4);
 }
 
-/* Lembar C.2 - Kartu dan isi kartu (Flexbox) */
 .kartu {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -59,6 +57,15 @@ thead th {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  min-height: 14rem;
+}
+
+.kartu__isi { 
+  min-width: 0; 
+}
+
+.kartu__judul { 
+  overflow-wrap: anywhere; 
 }
 
 .kartu__kaki {
@@ -76,6 +83,16 @@ thead th {
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
   font-weight: 600;
+}
+
+.sorotan {
+  background: var(--color-bg);
+}
+
+@media (min-width: 768px) {
+  .sorotan {
+    grid-column: span 2;
+  }
 }
 
 form {
@@ -140,9 +157,4 @@ input:user-invalid {
 
 .form-kolom:has(input:user-invalid) .pesan-galat {
   display: block;
-}
-
-.sorotan {
-  grid-column: span 2;
-  background: var(--color-bg); /* Beri sedikit beda warna latar agar lebih menonjol */
 }
