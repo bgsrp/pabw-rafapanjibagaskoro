@@ -33,6 +33,14 @@ Topik halaman saya: pengalaman bermusik dan daftar penampilan panggung saya sela
 
 Kriteria selesai saya: mengubah --color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
+## Pertemuan 5 — Layout Modern: Flexbox dan Grid
+
+Sketsa kerangka halaman:
+- Kerangka utama halaman: Menggunakan `display: grid` dengan 3 baris (`auto 1fr auto`) dan `min-height: 100dvh` agar footer selalu di bawah.
+- Area isi utama: Menggunakan grid dua kolom (`16rem 1fr`) untuk memisahkan sidebar dan konten utama (galeri musik).
+- Galeri riwayat panggung: Menggunakan grid adaptif `repeat(auto-fit, minmax(16rem, 1fr))` agar jumlah kolom merespons lebar layar tanpa media query.
+- Komponen internal (navbar, isi kartu, dan form): Menggunakan `display: flex` karena hanya membutuhkan susunan satu arah.
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk membantu menyusun panduan langkah pengerjaan dan memeriksa kesesuaian struktur semantik HTML5, design token CSS, serta atribut aksesibilitas. Pemilihan topik pengalaman bermusik, penentuan warna, data riwayat penampilan, penyusunan berkas gambar, dan pengujian halaman dikerjakan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, serta mendiskusikan pembagian kerangka layout modern (Grid dua dimensi dan Flexbox satu dimensi). Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data panggung, penulisan kode CSS tata letak, serta pengujian responsivitas halaman secara manual di peramban murni dikerjakan dan diputuskan sendiri.
