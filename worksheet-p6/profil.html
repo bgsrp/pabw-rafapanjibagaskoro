@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perjalanan Bermusik Saya</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="responsif.css">
+</head>
+<body class="page">
+  <header>
+    <div class="navbar">
+      <input type="checkbox" id="tema" class="pengalih-tema">
+      <h1>Perjalanan Bermusik Saya</h1>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#riwayat-panggung">Riwayat Panggung</a></li>
+          <li><a href="#catat-penampilan">Catat Penampilan</a></li>
+        </ul>
+      </nav>
+      <label for="tema" class="tombol-tema">Tema gelap</label>
+    </div>
+  </header>
+
+  <div class="isi">
+    <aside class="sidebar">
+      <h2>Tentang Saya</h2>
+      <p>Saya adalah Rafa Panji Bagaskoro, mahasiswa Informatika UII angkatan 2023 yang aktif berkegiatan di Unisi Music Community.</p>
+    </aside>
+
+    <main class="konten">
+      <section id="riwayat-panggung">
+        <h2>Riwayat Penampilan Panggung Saya</h2>
+
+        <figure>
+          <img src="fotopesta.jpg"
+               alt="Perform bersama Unisi Music Community di Malam Puncak Pesona Ta'aruf UII 2026"
+               width="640" height="360" loading="lazy">
+          <figcaption>Perform Unisi Music Community di Pesona Ta'aruf UII 2026</figcaption>
+        </figure>
+
+        <div class="katalog galeri">
+          <article class="kartu sorotan">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Pesona Ta'aruf UII 2026</h3>
+              <p>Tanggal: 5 September 2026</p>
+            </div>
+            <div class="kartu__kaki">
+              <span class="lencana">Lead Vocal</span>
+              <span>3 Lagu</span>
+            </div>
+          </article>
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kuliah Perdana UII 2026</h3>
+              <p>Tanggal: 2 September 2026</p>
+            </div>
+            <div class="kartu__kaki">
+              <span class="lencana">PA Vocalist</span>
+              <span>12 Lagu</span>
+            </div>
+          </article>
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Senja di Stasiun Jogja</h3>
+              <p>Tanggal: 8 Agustus 2026</p>
+            </div>
+            <div class="kartu__kaki">
+              <span class="lencana">Male Vocal</span>
+              <span>12 Lagu</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="catat-penampilan">
+        <h2>Tambah Catatan Penampilan Baru</h2>
+
+        <form action="/simpan" method="post">
+          <div class="form-kolom">
+            <label for="nama-acara">Nama Acara</label>
+            <input type="text" id="nama-acara" name="nama-acara" required>
+            <span class="pesan-galat">Nama acara wajib diisi.</span>
+          </div>
+          <div class="form-kolom">
+            <label for="tanggal-tampil">Tanggal Tampil</label>
+            <input type="date" id="tanggal-tampil" name="tanggal-tampil" required>
+            <span class="pesan-galat">Pilih tanggal tampil yang valid.</span>
+          </div>
+          <div class="form-kolom">
+            <label for="jumlah-lagu">Jumlah Lagu</label>
+            <input type="number" id="jumlah-lagu" name="jumlah-lagu" min="1" max="20" required>
+            <span class="pesan-galat">Masukkan jumlah lagu antara 1 sampai 20.</span>
+          </div>
+          <button type="submit">Simpan</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Rafa Panji Bagaskoro · 23523269 · 2026</p>
+  </footer>
+</body>
+</html>
