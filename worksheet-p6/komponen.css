@@ -89,12 +89,6 @@ thead th {
   background: var(--color-bg);
 }
 
-@media (min-width: 768px) {
-  .sorotan {
-    grid-column: span 2;
-  }
-}
-
 form {
   display: flex;
   flex-direction: column;

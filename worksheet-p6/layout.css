@@ -37,7 +37,6 @@ nav a:hover {
 
 .isi {
   display: grid;
-  grid-template-columns: 16rem 1fr;
   gap: var(--space-6);
   padding-block: var(--space-6);
   align-items: start;
@@ -58,10 +57,4 @@ footer {
 
 .konten {
   min-width: 0;
-}
-
-@media (max-width: 768px) {
-  .isi {
-    grid-template-columns: 1fr;
-  }
 }
