@@ -9,3 +9,15 @@
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
+
+@media (min-width: 48rem) {
+  .sorotan { 
+    grid-column: span 2; 
+  }
+}
+
+@media (min-width: 60rem) {
+  .isi { 
+    grid-template-columns: 16rem 1fr; 
+  }
+}
