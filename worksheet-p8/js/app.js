@@ -56,3 +56,19 @@ console.log("Hasil Map:", namaAcara);
 // Menguji SORT pada salinan array (menggunakan ... spread operator agar data asli aman)
 const urutLagu = [...daftarPenampilan].sort((a, b) => b.jumlahLagu - a.jumlahLagu);
 console.table(urutLagu);
+
+/* Lembar E - Membaca Galat (Versi Sudah Diperbaiki) */
+
+// Kasus 1: Mengambil data nama untuk dicetak (Ejaan sudah benar)
+console.log("Kasus 1 - Nama panggung:", profil.nama);
+
+// Kasus 2: Menghitung target lagu baru (Dikonversi ke Number dulu)
+const inputLagu = "12"; 
+const targetLagu = Number(inputLagu) + 3;
+console.log("Kasus 2 - Target lagu bulan ini:", targetLagu);
+
+// Kasus 3: Mengubah teks tombol di halaman (Memilih elemen yang pasti ada)
+const tombol = document.querySelector("button"); 
+if (tombol) {
+  tombol.innerHTML = "Simpan Data Penampilan";
+}
