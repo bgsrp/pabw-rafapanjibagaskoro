@@ -27,3 +27,32 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 // Menguji kedua fungsi dengan mengirim data profil kita sebagai argumen
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
+
+/* Lembar D - Struktur data dan array methods */
+
+// D.1 Membuat Array of Object untuk riwayat penampilan
+const daftarPenampilan = [
+  { judul: "Pesona Ta'aruf UII 2026", tanggal: "5 September 2026", role: "Lead Vocal", jumlahLagu: 3 },
+  { judul: "Kuliah Perdana UII 2026", tanggal: "2 September 2026", role: "PA Vocalist", jumlahLagu: 12 },
+  { judul: "Senja di Stasiun Jogja", tanggal: "8 Agustus 2026", role: "Male Vocal", jumlahLagu: 12 }
+];
+
+// D.3 Mencetak seluruh data sebagai tabel
+console.table(profil.keahlian);
+console.table(daftarPenampilan);
+
+// Menggunakan FILTER: menyaring penampilan dengan jumlah lagu lebih dari 5
+const konserBesar = daftarPenampilan.filter((tampil) => tampil.jumlahLagu > 5);
+console.table(konserBesar);
+
+// Menggunakan FIND: mengambil data satu acara spesifik
+const pesonaTaaruf = daftarPenampilan.find((tampil) => tampil.judul === "Pesona Ta'aruf UII 2026");
+console.log("Hasil Find:", pesonaTaaruf);
+
+// Menggunakan MAP: membuat array baru yang hanya berisi nama acaranya saja
+const namaAcara = daftarPenampilan.map((tampil) => tampil.judul);
+console.log("Hasil Map:", namaAcara);
+
+// Menguji SORT pada salinan array (menggunakan ... spread operator agar data asli aman)
+const urutLagu = [...daftarPenampilan].sort((a, b) => b.jumlahLagu - a.jumlahLagu);
+console.table(urutLagu);
