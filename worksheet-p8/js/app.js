@@ -13,3 +13,17 @@ const kalimatPerkenalan = `Halo, namaku ${profil.nama}. Aku adalah seorang ${pro
 
 // Mencetak ke console untuk memastikan datanya masuk
 console.log(kalimatPerkenalan);
+
+/* Lembar C - Dua fungsi murni */
+
+// 1. Fungsi menyusun kalimat perkenalan menerima satu argumen objek (destructuring)
+function buatPerkenalan({ nama, peran }) {
+  return `${nama} — ${peran}`;
+}
+
+// 2. Fungsi merapikan daftar array menjadi satu baris teks dengan pemisah " · "
+const formatKeahlian = (daftar) => daftar.join(" · ");
+
+// Menguji kedua fungsi dengan mengirim data profil kita sebagai argumen
+console.log(buatPerkenalan(profil));
+console.log(formatKeahlian(profil.keahlian));
