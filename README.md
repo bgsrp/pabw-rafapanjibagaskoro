@@ -41,6 +41,11 @@ Sketsa kerangka halaman:
 - Galeri riwayat panggung: Menggunakan grid adaptif `repeat(auto-fit, minmax(16rem, 1fr))` agar jumlah kolom merespons lebar layar tanpa media query.
 - Komponen internal (navbar, isi kartu, dan form): Menggunakan `display: flex` karena hanya membutuhkan susunan satu arah.
 
+## Pertemuan 8 — JavaScript Modern, Struktur Data, dan Array Methods
+
+- **Bagian yang dikerjakan sendiri**: Menentukan ide, menyusun struktur data profil bermusik, membuat array objek penampilan, serta menganalisis letak baris galat (bug) di Console.
+- **Bagian yang dibantu AI**: Menggunakan AI sebagai rekan diskusi untuk memperjelas konsep *pure function* dan mendemonstrasikan galat (memancing *bug* secara sengaja untuk simulasi *error handling* sesuai Lembar E).
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, serta mendiskusikan pembagian kerangka layout modern (Grid dua dimensi dan Flexbox satu dimensi). Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data panggung, penulisan kode CSS tata letak, serta pengujian responsivitas halaman secara manual di peramban murni dikerjakan dan diputuskan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern (Grid dua dimensi dan Flexbox satu dimensi), serta memperjelas konsep dasar JavaScript modern. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data panggung, penulisan kode tata letak, pengujian responsivitas halaman secara manual, serta analisis galat pada Console murni dikerjakan dan diputuskan sendiri.
