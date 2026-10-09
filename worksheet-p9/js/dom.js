@@ -74,3 +74,80 @@ barisFilter.addEventListener("click", (event) => {
 
 // Render pertama kali saat halaman dibuka
 render(daftarPenampilan);
+
+/* Lembar D - Pola Render dan Validasi Form */
+const form = document.querySelector("form");
+const inputAcara = document.querySelector("#nama-acara");
+const inputTanggal = document.querySelector("#tanggal-tampil");
+const inputLagu = document.querySelector("#jumlah-lagu");
+const tombolKirim = form.querySelector("button[type='submit']");
+
+// Memeriksa tiap kolom dan menampilkan pesan galat yang jelas
+function validasiKolom(input, kondisiSah, pesan) {
+  const kolomWadah = input.closest(".form-kolom");
+  const spanPesan = kolomWadah.querySelector(".pesan-galat");
+
+  if (!kondisiSah) {
+    input.setAttribute("aria-invalid", "true");
+    spanPesan.textContent = pesan;
+    spanPesan.style.display = "block";
+    return false;
+  } else {
+    input.removeAttribute("aria-invalid");
+    spanPesan.style.display = "none";
+    return true;
+  }
+}
+
+// Memeriksa seluruh kolom sebelum kirim
+function periksaSemuaKolom() {
+  const sahAcara = validasiKolom(
+    inputAcara,
+    inputAcara.value.trim() !== "",
+    "Nama acara wajib diisi dan tidak boleh hanya spasi."
+  );
+  const sahTanggal = validasiKolom(
+    inputTanggal,
+    inputTanggal.value.trim() !== "",
+    "Pilih tanggal tampil yang valid."
+  );
+  const sahLagu = validasiKolom(
+    inputLagu,
+    inputLagu.value.trim() !== "" && Number(inputLagu.value) >= 1 && Number(inputLagu.value) <= 20,
+    "Jumlah lagu harus berupa angka antara 1 sampai 20."
+  );
+
+  const semuaSah = sahAcara && sahTanggal && sahLagu;
+  tombolKirim.disabled = !semuaSah;
+  return semuaSah;
+}
+
+// Validasi aktif saat pengguna mengetik
+form.addEventListener("input", () => {
+  periksaSemuaKolom();
+});
+
+// Lembar D.2 - Penangan submit form
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // 1. Menghentikan muat ulang bawaan halaman
+
+  const sah = periksaSemuaKolom();
+  if (!sah) {
+    // Pindahkan fokus ke kolom pertama yang bermasalah
+    const kolomBermasalah = form.querySelector("[aria-invalid='true']");
+    if (kolomBermasalah) kolomBermasalah.focus();
+    return;
+  }
+
+  // Tambahkan data baru ke array dan perbarui tampilan dengan render
+  daftarPenampilan.push({
+    judul: inputAcara.value.trim(),
+    tanggal: inputTanggal.value,
+    role: "Male Vocal",
+    jumlahLagu: Number(inputLagu.value)
+  });
+
+  render(daftarPenampilan);
+  form.reset();
+  tombolKirim.disabled = true;
+});
