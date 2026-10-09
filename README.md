@@ -46,6 +46,12 @@ Sketsa kerangka halaman:
 - **Bagian yang dikerjakan sendiri**: Menentukan ide, menyusun struktur data profil bermusik, membuat array objek penampilan, serta menganalisis letak baris galat (bug) di Console.
 - **Bagian yang dibantu AI**: Menggunakan AI sebagai rekan diskusi untuk memperjelas konsep *pure function* dan mendemonstrasikan galat (memancing *bug* secara sengaja untuk simulasi *error handling* sesuai Lembar E).
 
+## Pertemuan 9 — DOM, Event, dan Interaktivitas
+
+- **Elemen yang dihubungkan**: Wadah galeri `#daftar`, baris filter `#filter`, notifikasi `#pesan-kosong`, dan form tambah penampilan.
+- **Bagian yang dikerjakan sendiri**: Pemisahan berkas `app.js` dan `dom.js`, penulisan fungsi perakit elemen DOM kartu penampilan, serta pengujian interaktivitas filter dan form secara manual.
+- **Bagian yang dibantu AI**: Diskusi implementasi pola *event delegation* memakai `event.target.closest("button")`, penyusunan pola fungsi `render(daftar)` yang aman dari duplikasi, dan validasi form dinamis sebelum `submit`.
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern (Grid dua dimensi dan Flexbox satu dimensi), serta memperjelas konsep dasar JavaScript modern. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data panggung, penulisan kode tata letak, pengujian responsivitas halaman secara manual, serta analisis galat pada Console murni dikerjakan dan diputuskan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, serta memperjelas konsep DOM traversal dan event handling. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian responsivitas halaman secara manual, serta analisis galat murni dikerjakan dan diputuskan sendiri.
