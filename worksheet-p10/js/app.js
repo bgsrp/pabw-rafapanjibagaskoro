@@ -73,7 +73,7 @@ if (tombol) {
   tombol.innerHTML = "Simpan Data Penampilan";
 }
 
-/* Pertemuan 10 (Lembar B & C) - Pemanggil API & Membaca JSON Dua Arah */
+/* Pertemuan 10 (Lembar C & D) - Membaca JSON & Menampilkan Data ke Halaman */
 import { ambilNotisia } from "./api.js";
 
 // C.1 Demonstrasi JSON dua arah: nilai -> teks (stringify) dan teks -> nilai (parse)
@@ -84,21 +84,67 @@ console.log("C.1 Hasil JSON.stringify (tipe " + typeof badanTeks + "):", badanTe
 const hasilParse = JSON.parse(badanTeks);
 console.log("C.1 Hasil JSON.parse (kembali jadi objek):", hasilParse.titulu);
 
-async function jalankanPengambilanData() {
-  const wadah = document.querySelector("#daftar");
+// D.1 Telusuri larik dan gambar kartu ke wadah #daftar
+const wadah = document.querySelector("#daftar");
+
+export function gambar(daftar) {
+  wadah.textContent = ""; // Kosongkan wadah sebelum menggambar ulang
+  if (daftar.length === 0) {
+    wadah.textContent = "Belum ada notisia";
+    return;
+  }
+
+  daftar.forEach(function (n) {
+    const kartu = document.createElement("article");
+    kartu.className = "kartu";
+
+    const isi = document.createElement("div");
+    isi.className = "kartu__isi";
+
+    const judul = document.createElement("h3");
+    judul.className = "kartu__judul";
+    judul.textContent = n.title; // Memakai textContent, bukan innerHTML
+
+    const keterangan = document.createElement("p");
+    keterangan.textContent = "Agenda #" + n.id;
+
+    isi.appendChild(judul);
+    isi.appendChild(keterangan);
+
+    const kaki = document.createElement("div");
+    kaki.className = "kartu__kaki";
+
+    const lencana = document.createElement("span");
+    lencana.className = "lencana";
+    lencana.textContent = n.completed ? "Selesai" : " Terjadwal";
+
+    kaki.appendChild(lencana);
+
+    kartu.appendChild(isi);
+    kartu.appendChild(kaki);
+    wadah.appendChild(kartu);
+  });
+}
+
+async function tampilkan() {
+  wadah.textContent = "Memuat..."; // 1. Keadaan memuat
   try {
-    const data = await ambilNotisia();
-    // C.3 Periksa bentuk data di Console sebelum menggambar
-    console.log("C.3 Bentuk data dari API:", data);
-    console.log("Contoh akses kunci pertama -> title:", data[0].title, "| completed:", data[0].completed);
-    
-    // Simpan ke window agar bisa diuji ketik langsung di Console
-    window.data = data;
-  } catch (galat) {
-    if (wadah) {
-      wadah.textContent = "Gagal memuat data: " + galat.message;
+    const daftar = await ambilNotisia();
+    console.log("C.3 Bentuk data dari API:", daftar);
+    window.data = daftar;
+
+    if (daftar.length === 0) {
+      wadah.textContent = "Belum ada notisia"; // 2. Keadaan kosong
+      return;
     }
+    gambar(daftar); // 3. Keadaan berhasil
+  } catch (galat) {
+    wadah.textContent = "Gagal memuat data: " + galat.message; // 4. Keadaan gagal
   }
 }
 
-jalankanPengambilanData();
+// Didaftarkan ke window agar gambar([]) bisa diuji langsung dari Console
+window.gambar = gambar;
+window.tampilkan = tampilkan;
+
+tampilkan();
