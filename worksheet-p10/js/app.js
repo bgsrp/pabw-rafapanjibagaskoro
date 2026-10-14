@@ -73,6 +73,19 @@ if (tombol) {
   tombol.innerHTML = "Simpan Data Penampilan";
 }
 
-/*Memanggil fungsi muat dari api.js */
-import { muat } from "./api.js";
-muat();
+/* Pertemuan 10 (Lembar B) - Pemanggil ambilNotisia dengan blok try/catch kedua */
+import { ambilNotisia } from "./api.js";
+
+async function jalankanPengambilanData() {
+  const wadah = document.querySelector("#daftar");
+  try {
+    const data = await ambilNotisia();
+    console.log("Data dari API berhasil dimuat:", data);
+  } catch (galat) {
+    if (wadah) {
+      wadah.textContent = "Gagal memuat data: " + galat.message;
+    }
+  }
+}
+
+jalankanPengambilanData();
