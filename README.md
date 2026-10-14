@@ -52,6 +52,14 @@ Sketsa kerangka halaman:
 - **Bagian yang dikerjakan sendiri**: Pemisahan berkas `app.js` dan `dom.js`, penulisan fungsi perakit elemen DOM kartu penampilan, serta pengujian interaktivitas filter dan form secara manual.
 - **Bagian yang dibantu AI**: Diskusi implementasi pola *event delegation* memakai `event.target.closest("button")`, penyusunan pola fungsi `render(daftar)` yang aman dari duplikasi, dan validasi form dinamis sebelum `submit`.
 
+## Pertemuan 10 — JavaScript Asinkron: fetch, Promise, dan JSON
+
+- **Alamat API Publik**: `https://jsonplaceholder.typicode.com/todos?_limit=6` (ditetapkan di satu tempat pada `js/api.js` tanpa kunci akses).
+- **Lapisan Data & Ekspor (Catatan untuk P11 & P13)**: Pengambilan data dipisahkan di berkas `js/api.js` dan diekspor dengan nama fungsi `ambilNotisia()`.
+- **Empat Keadaan Antarmuka**: Menangani keadaan memuat (`Memuat...`), berhasil (merender kartu dengan `createElement` dan `textContent`), kosong (`Belum ada notisia`), dan gagal (`Gagal memuat data: ...`).
+- **Bagian yang dikerjakan sendiri**: Pengujian panggilan di panel Network dan Console DevTools, simulasi tiga kasus kegagalan (alamat 404, jaringan Offline, dan larik kosong), serta pengambilan bukti tangkapan layar.
+- **Bagian yang dibantu AI**: Diskusi struktur kode `async/await` dengan dua lapis `try/catch` antara `js/api.js` dan `js/app.js`, serta demonstrasi pembacaan JSON dua arah (`JSON.stringify` dan `JSON.parse`).
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, serta memperjelas konsep DOM traversal dan event handling. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian responsivitas halaman secara manual, serta analisis galat murni dikerjakan dan diputuskan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, memperjelas konsep DOM traversal dan event handling, serta menyusun alur pengambilan data asinkron (`fetch` dan `async/await`). Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian jaringan di DevTools secara manual, serta analisis galat murni dikerjakan dan diputuskan sendiri.
