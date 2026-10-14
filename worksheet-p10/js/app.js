@@ -73,14 +73,27 @@ if (tombol) {
   tombol.innerHTML = "Simpan Data Penampilan";
 }
 
-/* Pertemuan 10 (Lembar B) - Pemanggil ambilNotisia dengan blok try/catch kedua */
+/* Pertemuan 10 (Lembar B & C) - Pemanggil API & Membaca JSON Dua Arah */
 import { ambilNotisia } from "./api.js";
+
+// C.1 Demonstrasi JSON dua arah: nilai -> teks (stringify) dan teks -> nilai (parse)
+const contohDataKirim = { titulu: "Latihan Gabungan UMC", nivel: 2 };
+const badanTeks = JSON.stringify(contohDataKirim);
+console.log("C.1 Hasil JSON.stringify (tipe " + typeof badanTeks + "):", badanTeks);
+
+const hasilParse = JSON.parse(badanTeks);
+console.log("C.1 Hasil JSON.parse (kembali jadi objek):", hasilParse.titulu);
 
 async function jalankanPengambilanData() {
   const wadah = document.querySelector("#daftar");
   try {
     const data = await ambilNotisia();
-    console.log("Data dari API berhasil dimuat:", data);
+    // C.3 Periksa bentuk data di Console sebelum menggambar
+    console.log("C.3 Bentuk data dari API:", data);
+    console.log("Contoh akses kunci pertama -> title:", data[0].title, "| completed:", data[0].completed);
+    
+    // Simpan ke window agar bisa diuji ketik langsung di Console
+    window.data = data;
   } catch (galat) {
     if (wadah) {
       wadah.textContent = "Gagal memuat data: " + galat.message;
