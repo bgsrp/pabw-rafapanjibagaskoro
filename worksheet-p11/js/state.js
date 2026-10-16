@@ -1,11 +1,11 @@
-/* Lembar D.1 - Penyimpanan klien menggunakan localStorage dan JSON */
+/* Lembar D.1 & E.2 - Penyimpanan klien menggunakan localStorage, JSON, dan penanganan versi */
 import { daftarPenampilan } from "./data.js";
 import { render } from "./dom.js";
 
 const KUNCI = "pabw-p11";
 const VERSI = 2;
 
-// Fungsi muat: membaca dari localStorage dengan penanganan aman
+// Fungsi muat: membaca dari localStorage dengan penanganan aman & pengecekan versi
 export function muatState() {
   try {
     const hasil = JSON.parse(localStorage.getItem(KUNCI));
