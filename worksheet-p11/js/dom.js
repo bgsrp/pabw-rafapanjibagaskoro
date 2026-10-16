@@ -1,5 +1,6 @@
 /* Lembar C.2 - Seluruh sentuhan halaman dihitung dari state */
 
+export const tombolAturUlang = document.querySelector("#atur-ulang");
 export const wadah = document.querySelector("#daftar");
 export const kosong = document.querySelector("#pesan-kosong");
 export const barisFilter = document.querySelector("#filter");
