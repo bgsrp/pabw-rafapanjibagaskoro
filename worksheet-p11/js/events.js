@@ -1,5 +1,5 @@
-/* Lembar B.3 - Pemasangan seluruh pendengar peristiwa */
-import { state, pilihKategori, tambahPenampilan } from "./state.js";
+/* Lembar C.3 - Pendengar hanya memanggil fungsi pengubah di state.js */
+import { pilihKategori, tambahPenampilan } from "./state.js";
 import {
   barisFilter,
   form,
@@ -7,34 +7,24 @@ import {
   inputTanggal,
   inputLagu,
   tombolKirim,
-  render,
-  tandaiTombolAktif,
   periksaSemuaKolom
 } from "./dom.js";
 
 export function pasangPendengar() {
-  // Pendengar klik untuk baris tombol filter (event delegation)
+  // Klik tombol filter hanya memanggil pilihKategori
   barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
     if (!tombol) return;
 
-    const kategori = tombol.dataset.kategori;
-    pilihKategori(kategori);
-
-    const terpilih = state.daftarPenampilan.filter(
-      (tampil) => state.kategoriAktif === "semua" || tampil.role === state.kategoriAktif
-    );
-
-    render(terpilih);
-    tandaiTombolAktif(tombol);
+    pilihKategori(tombol.dataset.kategori);
   });
 
-  // Pendengar ketikan pada form
+  // Validasi saat pengguna mengetik di form
   form.addEventListener("input", () => {
     periksaSemuaKolom();
   });
 
-  // Pendengar pengiriman form
+  // Pengiriman form hanya memanggil tambahPenampilan
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -52,11 +42,6 @@ export function pasangPendengar() {
       jumlahLagu: Number(inputLagu.value)
     });
 
-    const terpilih = state.daftarPenampilan.filter(
-      (tampil) => state.kategoriAktif === "semua" || tampil.role === state.kategoriAktif
-    );
-
-    render(terpilih);
     form.reset();
     tombolKirim.disabled = true;
   });

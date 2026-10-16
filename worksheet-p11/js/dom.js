@@ -1,4 +1,4 @@
-/* Lembar B.3 - Seluruh sentuhan ke halaman: pemilih, render, dan kelas */
+/* Lembar C.2 - Seluruh sentuhan halaman dihitung dari state */
 
 export const wadah = document.querySelector("#daftar");
 export const kosong = document.querySelector("#pesan-kosong");
@@ -41,22 +41,31 @@ export function buatKartu(tampil) {
   return article;
 }
 
-export function render(daftar) {
-  wadah.textContent = "";
+// Lembar C.2 - Fungsi saring(state) tepat sebelum render
+export function saring(state) {
+  return state.daftarPenampilan.filter(
+    (item) => state.kategoriAktif === "semua" || item.role === state.kategoriAktif
+  );
+}
 
-  if (daftar.length === 0) {
+// Lembar C.2 - render menerima objek state, bukan array mentah
+export function render(state) {
+  wadah.textContent = ""; // 1. kosongkan
+
+  // Gambar status tombol aktif dari state.kategoriAktif, bukan dari DOM
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol.dataset.kategori === state.kategoriAktif);
+  });
+
+  const tampil = saring(state); // dari state, bukan argumen
+
+  if (tampil.length === 0) { // 2. keadaan kosong
     kosong.hidden = false;
     return;
   }
 
   kosong.hidden = true;
-  daftar.forEach((tampil) => wadah.append(buatKartu(tampil)));
-}
-
-export function tandaiTombolAktif(tombolAktif) {
-  document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle("aktif", tombol === tombolAktif);
-  });
+  tampil.forEach((item) => wadah.append(buatKartu(item))); // 3. isi ulang
 }
 
 function validasiKolom(input, kondisiSah, pesan) {
