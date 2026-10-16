@@ -44,7 +44,7 @@ Sketsa kerangka halaman:
 ## Pertemuan 8 — JavaScript Modern, Struktur Data, dan Array Methods
 
 - **Bagian yang dikerjakan sendiri**: Menentukan ide, menyusun struktur data profil bermusik, membuat array objek penampilan, serta menganalisis letak baris galat (bug) di Console.
-- **Bagian yang dibantu AI**: Menggunakan AI sebagai rekan diskusi untuk memperjelas konsep *pure function* dan mendemonstrasikan galat (memancing *bug* secara sengaja untuk simulasi *error handling* sesuai Lembar E).
+- **Bagian yang dibantu AI**: Menggunakan AI sebagai rekan diskusi untuk memperjelas konsep *pure function* dan mendemonstrasikan galat (memancing *bug* secara sengaja untuk simulasi *error handling*).
 
 ## Pertemuan 9 — DOM, Event, dan Interaktivitas
 
@@ -55,11 +55,20 @@ Sketsa kerangka halaman:
 ## Pertemuan 10 — JavaScript Asinkron: fetch, Promise, dan JSON
 
 - **Alamat API Publik**: `https://jsonplaceholder.typicode.com/todos?_limit=6` (ditetapkan di satu tempat pada `js/api.js` tanpa kunci akses).
-- **Lapisan Data & Ekspor (Catatan untuk P11 & P13)**: Pengambilan data dipisahkan di berkas `js/api.js` dan diekspor dengan nama fungsi `ambilNotisia()`.
+- **Lapisan Data & Ekspor**: Pengambilan data dipisahkan di berkas `js/api.js` dan diekspor dengan nama fungsi `ambilNotisia()`.
 - **Empat Keadaan Antarmuka**: Menangani keadaan memuat (`Memuat...`), berhasil (merender kartu dengan `createElement` dan `textContent`), kosong (`Belum ada notisia`), dan gagal (`Gagal memuat data: ...`).
 - **Bagian yang dikerjakan sendiri**: Pengujian panggilan di panel Network dan Console DevTools, simulasi tiga kasus kegagalan (alamat 404, jaringan Offline, dan larik kosong), serta pengambilan bukti tangkapan layar.
 - **Bagian yang dibantu AI**: Diskusi struktur kode `async/await` dengan dua lapis `try/catch` antara `js/api.js` dan `js/app.js`, serta demonstrasi pembacaan JSON dua arah (`JSON.stringify` dan `JSON.parse`).
 
+## Pertemuan 11 — Front-end Foundation: Modul, State, dan Penyimpanan Klien[cite: 1, 2]
+
+- **Pecahan 5 Modul Wajib**: Memisahkan kode dari satu berkas monolitik menjadi `js/data.js`, `js/state.js`, `js/dom.js`, `js/events.js`, dan `js/app.js` dengan jalur relatif berawalan `./` dan berakhiran `.js`[cite: 2, 5, 21].
+- **State & Render**: Mengumpulkan seluruh keadaan ke dalam satu objek `state` tunggal dan memisahkan tampilan murni lewat fungsi `render(state)`[cite: 2, 8, 23].
+- **Penyimpanan Klien**: Menerapkan `localStorage` dengan penanganan `JSON.stringify`/`JSON.parse`, validasi nomor versi skema, penanganan data rusak via `try/catch`, serta tombol atur ulang (*reset*)[cite: 14, 22, 23].
+- **Verifikasi Node.js (Pekerjaan Rumah P12)**[cite: 20]:
+  - `node -v`: v24.12.0 (LTS)
+  - `npm -v`: 11.6.2
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, memperjelas konsep DOM traversal dan event handling, serta menyusun alur pengambilan data asinkron (`fetch` dan `async/await`). Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian jaringan di DevTools secara manual, serta analisis galat murni dikerjakan dan diputuskan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan modul, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, memperjelas konsep DOM traversal dan event handling, merancang alur pengambilan data asinkron (`fetch` dan `async/await`), serta arsitektur pemisahan lima modul ES6 beserta penanganan blok `try/catch` pengaman `localStorage`. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian jaringan di DevTools secara manual, analisis galat murni, dan pengisian laporan dikerjakan dan diputuskan sendiri.
