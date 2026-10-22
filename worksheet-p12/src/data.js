@@ -1,4 +1,3 @@
-/* Lembar B.1 & B.3 - Data mentah dan fungsi murni pemformat */
 
 export const profil = {
   nama: "Rafa Panji Bagaskoro",
@@ -7,9 +6,9 @@ export const profil = {
 };
 
 export const daftarPenampilan = [
-  { judul: "Pesona Ta'aruf UII 2026", tanggal: "5 September 2026", role: "Lead Vocal", jumlahLagu: 3 },
-  { judul: "Kuliah Perdana UII 2026", tanggal: "2 September 2026", role: "PA Vocalist", jumlahLagu: 12 },
-  { judul: "Senja di Stasiun Jogja", tanggal: "8 Agustus 2026", role: "Male Vocal", jumlahLagu: 12 }
+  { id: 1, judul: "Pesona Ta'aruf UII 2026", tanggal: "5 September 2026", role: "Lead Vocal", jumlahLagu: 3 },
+  { id: 2, judul: "Kuliah Perdana UII 2026", tanggal: "2 September 2026", role: "PA Vocalist", jumlahLagu: 12 },
+  { id: 3, judul: "Senja di Stasiun Jogja", tanggal: "8 Agustus 2026", role: "Male Vocal", jumlahLagu: 12 }
 ];
 
 // Fungsi murni 1: menyusun kalimat perkenalan
