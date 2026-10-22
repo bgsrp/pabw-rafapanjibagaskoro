@@ -62,13 +62,23 @@ Sketsa kerangka halaman:
 
 ## Pertemuan 11 — Front-end Foundation: Modul, State, dan Penyimpanan Klien[cite: 1, 2]
 
-- **Pecahan 5 Modul Wajib**: Memisahkan kode dari satu berkas monolitik menjadi `js/data.js`, `js/state.js`, `js/dom.js`, `js/events.js`, dan `js/app.js` dengan jalur relatif berawalan `./` dan berakhiran `.js`[cite: 2, 5, 21].
-- **State & Render**: Mengumpulkan seluruh keadaan ke dalam satu objek `state` tunggal dan memisahkan tampilan murni lewat fungsi `render(state)`[cite: 2, 8, 23].
-- **Penyimpanan Klien**: Menerapkan `localStorage` dengan penanganan `JSON.stringify`/`JSON.parse`, validasi nomor versi skema, penanganan data rusak via `try/catch`, serta tombol atur ulang (*reset*)[cite: 14, 22, 23].
-- **Verifikasi Node.js (Pekerjaan Rumah P12)**[cite: 20]:
+- **Pecahan 5 Modul Wajib**: Memisahkan kode dari satu berkas monolitik menjadi `js/data.js`, `js/state.js`, `js/dom.js`, `js/events.js`, dan `js/app.js` dengan jalur relatif berawalan `./` dan berakhiran `.js`[cite: 2].
+- **State & Render**: Mengumpulkan seluruh keadaan ke dalam satu objek `state` tunggal dan memisahkan tampilan murni lewat fungsi `render(state)`[cite: 2].
+- **Penyimpanan Klien**: Menerapkan `localStorage` dengan penanganan `JSON.stringify`/`JSON.parse`, validasi nomor versi skema, penanganan data rusak via `try/catch`, serta tombol atur ulang (*reset*).
+- **Verifikasi Node.js (Pekerjaan Rumah P12)**:
   - `node -v`: v24.12.0 (LTS)
   - `npm -v`: 11.6.2
 
+## Pertemuan 12 — Migrasi Aplikasi Web Statis ke Vue.js dengan Vite[cite: 1]
+
+- **Lingkungan Kerja Node.js**: Memastikan dependensi terpasang dengan baik dan mengelola proyek berbasis Vite.
+- **Dekomposisi Komponen Vue (`src/components/`)**: Memecah halaman menjadi komponen modular (`KepalaProfil.vue`, `TombolFilter.vue`, `DaftarProyek.vue`, dan `FormKontak.vue`) yang dirakit melalui `App.vue` menggunakan *props* satu arah.
+- **State Reaktif & Penyimpanan Klien**: Menggunakan `reactive()` dari Vue dan menyambungkannya dengan `localStorage` (`simpanan.js`) menggunakan kait reaktif `onMounted` dan `watch`.
+- **Build Produksi**: Menjalankan `npm run build` untuk menghasilkan bundel produksi optimal di dalam folder `dist/` serta memverifikasinya melalui `npm run preview`[cite: 1].
+- **Metrik Ukuran Berkas**:
+  - Ukuran total file sebelum build (mode *dev*): 3.7kB / 23 berkas.
+  - Ukuran total file sesudah build (mode produksi): 612B / 4 berkas.
+
 ## Catatan penggunaan AI
 
-AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan modul, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, memperjelas konsep DOM traversal dan event handling, merancang alur pengambilan data asinkron (`fetch` dan `async/await`), serta arsitektur pemisahan lima modul ES6 beserta penanganan blok `try/catch` pengaman `localStorage`. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian jaringan di DevTools secara manual, analisis galat murni, dan pengisian laporan dikerjakan dan diputuskan sendiri.
+AI digunakan untuk berdiskusi menyusun panduan langkah pengerjaan modul, memeriksa kesesuaian semantik HTML5 dan atribut aksesibilitas, menyusun skema design token CSS, mendiskusikan pembagian kerangka layout modern, memperjelas konsep DOM traversal dan event handling, merancang alur pengambilan data asinkron (`fetch` dan `async/await`), arsitektur pemisahan modul ES6 beserta penanganan blok `try/catch` pengaman `localStorage`, hingga arsitektur migrasi komponen Vue.js, pengelolaan *props*, reaktivitas state, dan konfigurasi *build* Vite. Adapun pemilihan topik pengalaman bermusik, penentuan palet warna, pengisian data riwayat panggung, penulisan kode antarmuka dan logika interaktivitas, pengujian jaringan di DevTools secara manual, analisis galat murni, dan pengisian laporan dikerjakan dan diputuskan sendiri.
